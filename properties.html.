@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Properties - My Sweet Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🏠 My Sweet Home</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="properties.html">Properties</a></li>
+        <li><a href="application-form.html">Apply</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="properties">
+    <h2>Available Properties</h2>
+    <div class="property-list">
+      <article class="property">
+        <h3>Cozy Apartment in Downtown</h3>
+        <p>2 bed · 1 bath · $1,200/month</p>
+        <a href="application-form.html" class="btn">Apply Now</a>
+      </article>
+      <article class="property">
+        <h3>Spacious Family Home</h3>
+        <p>4 bed · 3 bath · $2,500/month</p>
+        <a href="application-form.html" class="btn">Apply Now</a>
+      </article>
+      <article class="property">
+        <h3>Modern Studio</h3>
+        <p>1 bed · 1 bath · $900/month</p>
+        <a href="application-form.html" class="btn">Apply Now</a>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 My Sweet Home. All rights reserved.</p>
+  </footer>
+</body>
+</html>
