@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admin - Howardhome</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">Howardhome</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="properties.html">Properties</a></li>
+      <li><a href="apply.html">Apply</a></li>
+      <li><a href="payments.html">Payments</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <h1>Admin Dashboard</h1>
+
+    <div class="card">
+      <form id="addPropertyForm">
+        <label>Property ID (unique)<input type="text" id="propId" required></label>
+        <label>Title<input type="text" id="propTitle" required></label>
+        <label>Location<input type="text" id="propLocation" required></label>
+        <label>Rent (USD)<input type="number" id="propRent" required></label>
+        <label>Deposit (USD)<input type="number" id="propDeposit" required></label>
+        <label>Image URL<input type="text" id="propImage" placeholder="e.g., images/myprop.jpg"></label>
+        <label>Description<textarea id="propDesc" rows="4"></textarea></label>
+        <label>Zillow Link (optional)<input type="url" id="propZillow"></label>
+        <div class="card-actions">
+          <button type="submit" class="btn">Add Property</button>
+          <button type="button" id="clearStorage" class="btn outline">Clear Added Properties</button>
+        </div>
+      </form>
+      <p class="muted">Properties added here are stored in your browser's localStorage (demo). For production, connect to your backend.</p>
+    </div>
+
+    <section id="adminList" class="properties" style="margin-top:20px;"></section>
+  </main>
+
+  <script src="data.js"></script>
+  <script>
+    const adminList = document.getElementById('adminList');
+
+    function renderAdminList() {
+      adminList.innerHTML = '';
+      const saved = JSON.parse(localStorage.getItem('howard_properties') || '[]');
+      if (!saved.length) {
+        adminList.innerHTML = '<p class="muted">No properties added yet.</p>';
+        return;
+      }
+      saved.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'property-card';
+        card.innerHTML = `
+          <img src="${p.image}" alt="${p.title}">
+          <h3>${p.title}</h3>
+          <p class="muted">${p.location}</p>
+          <p class="price">Rent: <strong>$${p.rent.toLocaleString()}</strong></p>
+          <div class="card-actions">
+            <a class="btn outline" href="details.html?id=${encodeURIComponent(p.id)}">View</a>
+            <button class="btn remove" data-id="${p.id}">Remove</button>
+          </div>
+        `;
+        adminList.appendChild(card);
+      });
+    }
+
+    document.getElementById('addPropertyForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const p = {
+        id: document.getElementById('propId').value.trim(),
+        title: document.getElementById('propTitle').value.trim(),
+        location: document.getElementById('propLocation').value.trim(),
+        rent: Number(document.getElementById('propRent').value),
+        deposit: Number(document.getElementById('propDeposit').value),
+        image: document.getElementById('propImage').value || 'default.jpg',
+        description: document.getElementById('propDesc').value.trim(),
+        zillow: document.getElementById('propZillow').value || ''
+      };
+      if (!p.id || !p.title) return alert('Please provide ID and title.');
+      const saved = JSON.parse(localStorage.getItem('howard_properties') || '[]');
+      if (saved.some(x => x.id === p.id)) return alert('Property ID already exists in local storage.');
+      saved.push(p);
+      localStorage.setItem('howard_properties', JSON.stringify(saved));
+      renderAdminList();
+      e.target.reset();
+    });
+
+    adminList.addEventListener('click', function(e) {
+      if (e.target.matches('.remove')) {
+        const id = e.target.dataset.id;
+        let saved = JSON.parse(localStorage.getItem('howard_properties') || '[]');
+        saved = saved.filter(p => p.id !== id);
+        localStorage.setItem('howard_properties', JSON.stringify(saved));
+        renderAdminList();
+      }
+    });
+
+    document.getElementById('clearStorage').addEventListener('click', function() {
+      if (!confirm('Clear all properties added via admin? This cannot be undone.')) return;
+      localStorage.removeItem('howard_properties');
+      renderAdminList();
+    });
+
+    // Initial render
+    renderAdminList();
+  </script>
+</body>
+</html>

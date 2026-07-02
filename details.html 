@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Property Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">Howardhome</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="properties.html">Properties</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+  </nav>
+
+  <h1>Property Details</h1>
+
+  <!-- Mountain View -->
+  <div class="details" id="MountainView">
+    <img src="mountainview.jpg" alt="Mountain View ADU">
+    <h2>437 ½ N Mountain View Ave, Los Angeles, CA</h2>
+    <p><strong>Rent:</strong> $1,550 / month</p>
+    <p><strong>Deposit:</strong> $500</p>
+    <p><strong>Description:</strong> Compact ADU near Sunset Blvd with modern finishes.</p>
+    <p><a href="https://www.zillow.com/homedetails/437-N-Mountain-View-Ave-Los-Angeles-CA-90026/" target="_blank">View on Zillow</a></p>
+    <button onclick="window.location='apply.html?id=MountainView'">Apply Now</button>
+    <button onclick="window.location='payments.html?id=MountainView'">Go to Payments</button>
+  </div>
+
+  <!-- Lyric Ave -->
+  <div class="details" id="LyricAve">
+    <img src="lyric.jpg" alt="Lyric Ave Home">
+    <h2>2516 Lyric Ave, Los Angeles, CA</h2>
+    <p><strong>Rent:</strong> $4,775 / month</p>
+    <p><strong>Deposit:</strong> $500</p>
+    <p><strong>Description:</strong> Spacious 2 bed, 2 bath Los Feliz home with hardwood floors, private garden, and detached garage.</p>
+    <p><a href="https://www.zillow.com/homedetails/2516-Lyric-Ave-Los-Angeles-CA-90027/20748641_zpid/" target="_blank">View on Zillow</a></p>
+    <button onclick="window.location='apply.html?id=LyricAve'">Apply Now</button>
+    <button onclick="window.location='payments.html?id=LyricAve'">Go to Payments</button>
+  </div>
+
+  <!-- Security Ave -->
+  <div class="details" id="SecurityAve">
+    <img src="security.jpg" alt="Security Ave ADU">
+    <h2>7619 Security Ave, Burbank, CA</h2>
+    <p><strong>Rent:</strong> $2,200 / month</p>
+    <p><strong>Deposit:</strong> $500</p>
+    <p><strong>Description:</strong> Modern 2 bed, 2 bath ADU built in 2023 with marble tile floors, recessed lighting, and in-unit laundry.</p>
+    <p><a href="https://www.zillow.com/homedetails/7619-Security-Ave-Burbank-CA-91504/2057064155_zpid/" target="_blank">View on Zillow</a></p>
+    <button onclick="window.location='apply.html?id=SecurityAve'">Apply Now</button>
+    <button onclick="window.location='payments.html?id=SecurityAve'">Go to Payments</button>
+  </div>
+
+</body>
+</html>

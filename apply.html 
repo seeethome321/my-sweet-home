@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply - Howardhome</title>
+    <style>
+        body { background:#f5f5f5; font-family:Arial; }
+        form {
+            background:white; padding:20px; border-radius:10px;
+            max-width:500px; margin:40px auto;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        }
+        input, textarea, select {
+            width:100%; padding:10px; margin-top:10px;
+            border-radius:8px; border:1px solid #ccc;
+        }
+        button {
+            margin-top:15px; padding:10px; width:100%;
+            background:#007bff; color:white; border:none;
+            border-radius:8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav style="background:white; padding:10px; border-radius:8px; margin-bottom:20px;">
+    <ul style="display:flex; gap:20px; list-style:none;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="properties.html">Properties</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="admin.html">Admin</a></li>
+    </ul>
+</nav>
+
+<h2 style="text-align:center; margin-top:20px;">Rental Application</h2>
+
+<form onsubmit="alert('Application submitted!'); return false;">
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Phone" required>
+    <input type="text" placeholder="Current Address" required>
+    <input type="text" placeholder="Employer" required>
+    <input type="number" placeholder="Monthly Income" required>
+    <textarea placeholder="Additional Notes" rows="4"></textarea>
+    <button>Submit Application</button>
+</form>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply - Howardhome</title>
+    <style>
+        body { background:#f5f5f5; font-family:Arial; }
+        form {
+            background:white; padding:20px; border-radius:10px;
+            max-width:500px; margin:40px auto;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        }
+        input, textarea, select {
+            width:100%; padding:10px; margin-top:10px;
+            border-radius:8px; border:1px solid #ccc;
+        }
+        button {
+            margin-top:15px; padding:10px; width:100%;
+            background:#007bff; color:white; border:none;
+            border-radius:8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav style="background:white; padding:10px; border-radius:8px; margin-bottom:20px;">
+    <ul style="display:flex; gap:20px; list-style:none;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="properties.html">Properties</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="admin.html">Admin</a></li>
+    </ul>
+</nav>
+
+<h2 style="text-align:center; margin-top:20px;">Rental Application</h2>
+
+<form onsubmit="alert('Application submitted!'); return false;">
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Phone" required>
+    <input type="text" placeholder="Current Address" required>
+    <input type="text" placeholder="Employer" required>
+    <input type="number" placeholder="Monthly Income" required>
+    <textarea placeholder="Additional Notes" rows="4"></textarea>
+    <button>Submit Application</button>
+</form>
+
+</body>
+</html>
